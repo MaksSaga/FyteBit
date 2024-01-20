@@ -1,10 +1,13 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import style from './global-layout.module.sass'
+import { Outlet } from 'react-router-dom'
+import { Header } from '../../../organisms/Header/Header.tsx'
 
-interface IGlobalLayout {
-  children: ReactNode
-}
-
-export const GlobalLayout: React.FC<IGlobalLayout> = ({ children }) => {
-  return <div className={style.wrapper}>{children}</div>
+export const GlobalLayout: React.FC = ({}) => {
+  return (
+    <div className={style.wrapper}>
+      <Header />
+      <Outlet />
+    </div>
+  )
 }

@@ -1,8 +1,11 @@
-import { Logo } from '../../atoms/Logo/Logo.tsx'
+import { Route, Routes } from 'react-router-dom'
+import { MainPage } from '../../../pages/Main/MainPage.tsx'
 import { GlobalLayout } from '../Layouts/GlobalLoyout/GlobalLayout.tsx'
 
 export const App = () => (
-  <GlobalLayout>
-    <Logo />
-  </GlobalLayout>
+  <Routes>
+    <Route path="/" element={<GlobalLayout />}>
+      <Route index element={<MainPage />} />
+    </Route>
+  </Routes>
 )
